@@ -5,6 +5,10 @@
     <title>Basic Input Form</title>
 </head>
 <body>
+
+    {% if error_message %}
+        <p>{{error_message}}</p>
+    {% endif %}
     <form method="GET" action="{% url 'index' %}">
         {% comment %} goes back to the index function in the view.py file. {% endcomment %}
         <!-- Email Input -->
