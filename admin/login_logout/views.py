@@ -5,8 +5,8 @@ VALID_PASSWD = '123'
 
 def index(request):
     
-    submitted_email = request.GET['email']
-    submitted_passwd = request.GET['passwd']
+    submitted_email = request.GET.get('email')
+    submitted_passwd = request.GET.get('passwd')
     
     if submitted_email == VALID_EMAIL and submitted_passwd == VALID_PASSWD:
         return redirect('result')
@@ -16,7 +16,7 @@ def index(request):
         
 
 
-def result(request):
+def result_page(request):
     
     return render(request, 'result.html')
 # Create your views here.
